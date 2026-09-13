@@ -1,0 +1,21 @@
+{
+  "params": {
+    "p_baseline": 0.1,
+    "mde": 0.05,
+    "alpha": 0.05,
+    "power": 0.8
+  },
+  "sample_size_formula": 57763,
+  "measured_power": 0.805,
+  "aa_false_positive_rate": 0.053,
+  "example_experiment": {
+    "z": 3.315,
+    "p": 0.00092,
+    "uplift_abs": 0.0059,
+    "uplift_rel": 0.0596,
+    "ci95": [
+      0.00241,
+      0.00939
+    ]
+  }
+}

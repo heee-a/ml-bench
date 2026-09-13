@@ -34,6 +34,11 @@
 用评测说话，不迷信"向量检索更高级"。
 → [README](projects/03_lsa_search/README.md)
 
+### 🎲 [05_ab_simulation A/B 测试方法论](projects/05_ab_simulation/)
+样本量公式 × 蒙特卡洛互证（公式 80% vs 实测 80.5%）× 双比例 z 检验全流程
+× A/A 诚实性检查（假阳性 5.3%≈α）× 功效曲线。模拟数据明确标注，方法工业级。
+→ [README](projects/05_ab_simulation/README.md)
+
 ## 快速开始
 
 ```bash

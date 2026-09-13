@@ -103,3 +103,17 @@ def test_pm25_dataset_integrity():
                      parse_dates=["date"])
     merged = pm.merge(wx[["city", "date"]], on=["city", "date"])
     assert len(merged) >= 350                       # 城市-月样本的数据基础
+
+
+# ---------------- 05 ab simulation ----------------
+def test_ab_simulation_results():
+    import json
+
+    m = json.loads(
+        (REPO / "projects/05_ab_simulation/reports/simulation.json").read_text(
+            encoding="utf-8"))
+    # 蒙特卡洛功效与理论互证（±5pp 容差）
+    assert 0.75 <= m["measured_power"] <= 0.85
+    # A/A 假阳性率应接近 α，不能异常高
+    assert 0.02 <= m["aa_false_positive_rate"] <= 0.08
+    assert m["sample_size_formula"] == 57763
