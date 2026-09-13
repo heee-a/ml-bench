@@ -1,0 +1,196 @@
+{
+  "protocol": "RepeatedStratifiedKFold(5 splits x 2 repeats), random_state=42",
+  "results": [
+    {
+      "dataset": "breast_cancer",
+      "model": "LogReg",
+      "accuracy_mean": 0.9754,
+      "accuracy_std": 0.0135,
+      "n_samples": 569,
+      "n_features": 30,
+      "n_classes": 2
+    },
+    {
+      "dataset": "breast_cancer",
+      "model": "SVM-RBF",
+      "accuracy_mean": 0.9763,
+      "accuracy_std": 0.0152,
+      "n_samples": 569,
+      "n_features": 30,
+      "n_classes": 2
+    },
+    {
+      "dataset": "breast_cancer",
+      "model": "KNN",
+      "accuracy_mean": 0.9649,
+      "accuracy_std": 0.0141,
+      "n_samples": 569,
+      "n_features": 30,
+      "n_classes": 2
+    },
+    {
+      "dataset": "breast_cancer",
+      "model": "RandomForest",
+      "accuracy_mean": 0.9561,
+      "accuracy_std": 0.0136,
+      "n_samples": 569,
+      "n_features": 30,
+      "n_classes": 2
+    },
+    {
+      "dataset": "breast_cancer",
+      "model": "GBDT",
+      "accuracy_mean": 0.9543,
+      "accuracy_std": 0.0191,
+      "n_samples": 569,
+      "n_features": 30,
+      "n_classes": 2
+    },
+    {
+      "dataset": "digits",
+      "model": "LogReg",
+      "accuracy_mean": 0.9686,
+      "accuracy_std": 0.0084,
+      "n_samples": 1797,
+      "n_features": 64,
+      "n_classes": 10
+    },
+    {
+      "dataset": "digits",
+      "model": "SVM-RBF",
+      "accuracy_mean": 0.9825,
+      "accuracy_std": 0.0047,
+      "n_samples": 1797,
+      "n_features": 64,
+      "n_classes": 10
+    },
+    {
+      "dataset": "digits",
+      "model": "KNN",
+      "accuracy_mean": 0.9755,
+      "accuracy_std": 0.0069,
+      "n_samples": 1797,
+      "n_features": 64,
+      "n_classes": 10
+    },
+    {
+      "dataset": "digits",
+      "model": "RandomForest",
+      "accuracy_mean": 0.9794,
+      "accuracy_std": 0.0049,
+      "n_samples": 1797,
+      "n_features": 64,
+      "n_classes": 10
+    },
+    {
+      "dataset": "digits",
+      "model": "GBDT",
+      "accuracy_mean": 0.9627,
+      "accuracy_std": 0.0066,
+      "n_samples": 1797,
+      "n_features": 64,
+      "n_classes": 10
+    },
+    {
+      "dataset": "wine",
+      "model": "LogReg",
+      "accuracy_mean": 0.9888,
+      "accuracy_std": 0.0137,
+      "n_samples": 178,
+      "n_features": 13,
+      "n_classes": 3
+    },
+    {
+      "dataset": "wine",
+      "model": "SVM-RBF",
+      "accuracy_mean": 0.9833,
+      "accuracy_std": 0.0185,
+      "n_samples": 178,
+      "n_features": 13,
+      "n_classes": 3
+    },
+    {
+      "dataset": "wine",
+      "model": "KNN",
+      "accuracy_mean": 0.9659,
+      "accuracy_std": 0.0379,
+      "n_samples": 178,
+      "n_features": 13,
+      "n_classes": 3
+    },
+    {
+      "dataset": "wine",
+      "model": "RandomForest",
+      "accuracy_mean": 0.9829,
+      "accuracy_std": 0.0228,
+      "n_samples": 178,
+      "n_features": 13,
+      "n_classes": 3
+    },
+    {
+      "dataset": "wine",
+      "model": "GBDT",
+      "accuracy_mean": 0.9328,
+      "accuracy_std": 0.0358,
+      "n_samples": 178,
+      "n_features": 13,
+      "n_classes": 3
+    }
+  ],
+  "significance_tests": [
+    {
+      "dataset": "breast_cancer",
+      "pair": "top2",
+      "best": "SVM-RBF",
+      "other": "LogReg",
+      "diff_mean": 0.0009,
+      "wilcoxon_p": 0.8281,
+      "significant_at_0.05": false
+    },
+    {
+      "dataset": "breast_cancer",
+      "pair": "best_vs_worst",
+      "best": "SVM-RBF",
+      "other": "GBDT",
+      "diff_mean": 0.022,
+      "wilcoxon_p": 0.0078,
+      "significant_at_0.05": true
+    },
+    {
+      "dataset": "digits",
+      "pair": "top2",
+      "best": "SVM-RBF",
+      "other": "RandomForest",
+      "diff_mean": 0.0031,
+      "wilcoxon_p": 0.2148,
+      "significant_at_0.05": false
+    },
+    {
+      "dataset": "digits",
+      "pair": "best_vs_worst",
+      "best": "SVM-RBF",
+      "other": "GBDT",
+      "diff_mean": 0.0198,
+      "wilcoxon_p": 0.002,
+      "significant_at_0.05": true
+    },
+    {
+      "dataset": "wine",
+      "pair": "top2",
+      "best": "LogReg",
+      "other": "SVM-RBF",
+      "diff_mean": 0.0056,
+      "wilcoxon_p": 0.625,
+      "significant_at_0.05": false
+    },
+    {
+      "dataset": "wine",
+      "pair": "best_vs_worst",
+      "best": "LogReg",
+      "other": "GBDT",
+      "diff_mean": 0.056,
+      "wilcoxon_p": 0.0078,
+      "significant_at_0.05": true
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+﻿dataset,model,accuracy_mean,accuracy_std,n_samples,n_features,n_classes
+breast_cancer,LogReg,0.9754,0.0135,569,30,2
+breast_cancer,SVM-RBF,0.9763,0.0152,569,30,2
+breast_cancer,KNN,0.9649,0.0141,569,30,2
+breast_cancer,RandomForest,0.9561,0.0136,569,30,2
+breast_cancer,GBDT,0.9543,0.0191,569,30,2
+digits,LogReg,0.9686,0.0084,1797,64,10
+digits,SVM-RBF,0.9825,0.0047,1797,64,10
+digits,KNN,0.9755,0.0069,1797,64,10
+digits,RandomForest,0.9794,0.0049,1797,64,10
+digits,GBDT,0.9627,0.0066,1797,64,10
+wine,LogReg,0.9888,0.0137,178,13,3
+wine,SVM-RBF,0.9833,0.0185,178,13,3
+wine,KNN,0.9659,0.0379,178,13,3
+wine,RandomForest,0.9829,0.0228,178,13,3
+wine,GBDT,0.9328,0.0358,178,13,3
