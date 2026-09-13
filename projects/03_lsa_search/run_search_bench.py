@@ -41,7 +41,6 @@ N_COMPONENTS = 48
 
 
 def build_lsa(docs: dict[str, str]):
-    chunks_docs = list(docs.items())
     texts = []
     from chunker import chunk_corpus
 

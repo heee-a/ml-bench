@@ -6,7 +6,6 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
 from scipy import stats
 
@@ -84,10 +83,6 @@ def main() -> None:
 
     exceed = (df.groupby("city")["pm25"].apply(lambda s: (s > WHO_DAILY_PM25).mean())
               * 100).round(1)
-    north_ratio = ratio[[c for c in ratio.index if c in
-                         {"北京", "天津", "石家庄", "太原", "西安", "兰州",
-                          "乌鲁木齐", "沈阳", "哈尔滨"}]]
-    south_ratio = ratio[[c for c in ratio.index if c not in north_ratio.index]]
 
     print("\n=== 关键发现（供 README 引用）===")
     worst, best = ranking.iloc[0], ranking.iloc[-1]

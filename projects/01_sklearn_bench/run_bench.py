@@ -11,7 +11,6 @@
 """
 
 import json
-import sys
 from pathlib import Path
 
 import matplotlib.pyplot as plt
