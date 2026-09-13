@@ -21,6 +21,13 @@
 差异——「北方采暖更糟」的二分叙事被数据推翻，过程完整保留。
 → [README](projects/02_air_quality/README.md)
 
+### 📈 [04_pm25_regression 监督学习回归](projects/04_pm25_regression/)
+**任务**：合并气象与空气质量采集数据，预测城市月度 PM2.5（377 个城市-月）。
+- 两次如实的口径修正：日度口径天花板实测（R²≈0.1）→ 聚合月度；
+- 朴素基线纪律：仅月份特征即 R²=0.128，随机森林 +10pp 至 0.225；
+- TimeSeriesSplit 滚动回测、周期编码、特征重要性。
+→ [README](projects/04_pm25_regression/README.md)
+
 ### 🔍 [03_lsa_search 检索方法对照](projects/03_lsa_search/)
 同一语料、同一评测集下：BM25（83%）> 混合（75%）> LSA（67%）。
 小语料 + 关键词型查询场景下，BM25 仍是不可撼动的基线——

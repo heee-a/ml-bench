@@ -85,3 +85,21 @@ def test_lsa_and_bm25_hit_on_known_query():
     lsa_hits = lsa_search("LRU 缓存怎么实现？", vectorizer, svd, lsa, chunks, top_k=5)
     assert isinstance(lsa_hits, list)
     assert all(len(np.shape(h[1])) == 0 for h in lsa_hits)  # 分数是标量
+
+
+# ---------------- 04 pm25 regression ----------------
+def test_regression_scores():
+    s = pd.read_csv(REPO / "projects/04_pm25_regression/reports/regression_scores.csv")
+    assert len(s) == 4
+    assert "基线：仅月份（线性）" in set(s["model"])
+    best = s["r2"].max()
+    assert 0.0 <= best <= 0.9                       # 月度口径的合理区间
+
+
+def test_pm25_dataset_integrity():
+    pm = pd.read_csv(REPO / "projects/04_pm25_regression/data/pm_daily.csv",
+                     parse_dates=["date"])
+    wx = pd.read_csv(REPO / "projects/04_pm25_regression/data/weather_daily.csv",
+                     parse_dates=["date"])
+    merged = pm.merge(wx[["city", "date"]], on=["city", "date"])
+    assert len(merged) >= 350                       # 城市-月样本的数据基础
