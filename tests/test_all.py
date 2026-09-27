@@ -117,3 +117,19 @@ def test_ab_simulation_results():
     # A/A 假阳性率应接近 α，不能异常高
     assert 0.02 <= m["aa_false_positive_rate"] <= 0.08
     assert m["sample_size_formula"] == 57763
+
+
+# ---------------- 06 learning curves ----------------
+def test_learning_curves_complete():
+    import json
+
+    data = json.loads(
+        (REPO / "projects/06_learning_curves/reports/curves.json").read_text(
+            encoding="utf-8"))
+    assert len(data) == 2
+    for ds in data:
+        assert set(ds["curves"]) == {"LogReg", "SVM-RBF", "KNN", "RandomForest"}
+        for curve in ds["curves"].values():
+            assert len(curve["sizes"]) == 6 and len(curve["mean"]) == 6
+            # 准确率随样本量非递减到合理区间（允许 ±2pp 噪声）
+            assert curve["mean"][-1] >= curve["mean"][0] - 0.02

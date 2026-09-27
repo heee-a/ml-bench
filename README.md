@@ -39,6 +39,12 @@
 × A/A 诚实性检查（假阳性 5.3%≈α）× 功效曲线。模拟数据明确标注，方法工业级。
 → [README](projects/05_ab_simulation/README.md)
 
+### 📉 [06_learning_curves 学习曲线](projects/06_learning_curves/)
+定量回答"需要多少数据"：2 数据集 × 4 模型 × 6 训练规模 × 5 种子。
+digits 全模型需全部 1010 样本才收敛（解释 ai-lab/04 的 MLP 差距）；
+breast_cancer 的 LogReg 320 样本即达最终性能 99%。
+→ [README](projects/06_learning_curves/README.md)
+
 ## 快速开始
 
 ```bash
